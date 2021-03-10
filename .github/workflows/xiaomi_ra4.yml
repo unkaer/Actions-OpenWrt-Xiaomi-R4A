@@ -8,14 +8,14 @@
 # Description: Build OpenWrt using GitHub Actions
 #
 
-name: 编译R4A默认
+name: 编译小米R4A千兆版
 
 on:
   repository_dispatch:
   workflow_dispatch:
     inputs:
       ssh:
-        description: 'SSH connection to Actions'
+        description: 'SSH 连接至 Actions'
         required: true
         default: 'true'
 

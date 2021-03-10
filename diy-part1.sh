@@ -15,3 +15,7 @@
 
 # Add a feed source
 #sed -i '$a src-git lienol https://github.com/Lienol/openwrt-package' feeds.conf.default
+
+# 复制ddnsto
+cp -a openwrt/package/feeds/ddnsto/ddnsto openwrt/package/network/services/ddnsto
+tree openwrt/package/network/services/ddnsto
