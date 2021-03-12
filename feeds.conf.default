@@ -10,3 +10,4 @@ src-git oldpackages http://git.openwrt.org/packages.git
 src-link custom /usr/src/openwrt/custom-feed
 src-git helloworld https://github.com/fw876/helloworld
 src-git ddnsto https://github.com/linkease/ddnsto-openwrt
+src-git adguardhome https://github.com/rufengsuixing/luci-app-adguardhome
