@@ -10,7 +10,7 @@
 # Description: OpenWrt DIY script part 1 (Before Update feeds)
 #
 
-# Uncomment a feed source
+# 取消插件注释
 #sed -i 's/^#\(.*helloworld\)/\1/' feeds.conf.default
 
 # 添加插件源码
