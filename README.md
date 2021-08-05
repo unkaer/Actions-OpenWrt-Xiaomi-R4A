@@ -69,7 +69,30 @@ sed -i 's@.*CYXluq4wUazHjmCDBCqXF*@#&@g' package/lean/default-settings/files/zzz
 插件对照参考 [OpenWrt 编译 LuCI -> Applications 添加插件应用说明-L大](https://www.right.com.cn/forum/thread-3682029-1-1.html)
 `Y` 确定选中 `N`取消选中
 
-### 2.2保存下载本次修改的配置文件（可选）
+#### 2.1.1 机型选择
+前三个是设置机型，默认已经选好了 小米R4A千兆版
+![机型](https://user-images.githubusercontent.com/45261780/128300236-881f51d1-6475-4621-83f4-61775e01030e.png)
+
+#### 2.1.2 主题选择
+在 `LuCI` --> `Themes` 中进行设置
+![LuCI](https://user-images.githubusercontent.com/45261780/128300627-a3af1f69-2c2f-49fa-86ce-8da6b3a0d0d4.png)
+
+#### 2.1.3 插件选择
+在 `LCTY` --> `Applications` 中进行设置
+![Applications](https://user-images.githubusercontent.com/45261780/128300725-26799ad1-1bbb-4035-8ff0-aeaba1635dd3.png)
+
+#### 2.1.4 保存设置
+方向键移动选中 `Save` 回车确认
+![1](https://user-images.githubusercontent.com/45261780/128300983-93ee554e-e72d-4082-8550-265ff087971e.png)
+保存为 默认的文件名
+![2](https://user-images.githubusercontent.com/45261780/128301040-705307f5-2b0b-42d0-b52c-5608807ebcd5.png)
+
+或者 连按两下 `ESC` 返回至退出菜单界面，
+会弹出确认是否保存菜单，确认即可
+![3](https://user-images.githubusercontent.com/45261780/128301176-8f163e5e-84f3-4700-ba38-7732f4fe16f4.png)
+
+
+### 2.2下载本次修改的配置文件（可选）
 下次升级就可以直接用，不必再 ssh 选择插件了
 
 ```
@@ -90,7 +113,9 @@ cat seed.config
 ```
 
 ### 2.3退出 ssh
-`ctrl`+`D`  
+在命令行界面 `ctrl`+`D`  退出 ssh
+![批注 2021-08-05 115225](https://user-images.githubusercontent.com/45261780/128301252-f054fa0a-6544-4770-8e99-217946f9b692.png)
+![批注 2021-08-05 115238](https://user-images.githubusercontent.com/45261780/128301319-5b6969b1-94e5-43f7-97c7-6f69acbd92ec.png)
 
 ## 3.6 下载固件
 一般两个小时左右编译完成
