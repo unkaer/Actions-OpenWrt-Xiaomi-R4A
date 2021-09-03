@@ -6,11 +6,13 @@
 
 使用 GitHub Actions 编译 OpenWrt 固件
 
+可以参考 P3TERX/Actions-OpenWrt原版教程
 [Read the details in my blog (in Chinese) | 中文教程](https://p3terx.com/archives/build-openwrt-with-github-actions.html)
+
+或者按照下面的来
 
 # 修改说明
 
-魔改成了
 使用 `Lean` 大佬的 https://github.com/coolsnowwolf/lede openwrt源码编译 `小米R4A千兆版` 的 `breed直刷版`
 
 1. .comfig 默认配置选中小米R4A千兆版 （其余默认）
@@ -25,29 +27,20 @@
 
 3. 修改diy-part2.sh
 
-修改 `diy-part2.sh` 参考自 [281677160/build-openwrt](https://github.com/281677160/build-openwrt) 
+修改openwrt登陆地址、密码、部分插件名称，
 
-```sh
-# 修改openwrt登陆地址,把下面的192.168.5.1修改成你想要的就可以了
-sed -i 's/192.168.1.1/192.168.5.1/g' package/base-files/files/bin/config_generate
-
-# 修改主机名字，把Xiaomi-R4A修改你喜欢的就行（不能纯数字或者使用中文）
-sed -i '/uci commit system/i\uci set system.@system[0].hostname='Xiaomi-R4A'' package/lean/default-settings/files/zzz-default-settings
-
-# 版本号里显示一个自己的名字（ababwnq build $(TZ=UTC-8 date "+%Y.%m.%d") @ 这些都是后增加的）
-sed -i "s/OpenWrt /ababwnq build $(TZ=UTC-8 date "+%Y.%m.%d") @ OpenWrt /g" package/lean/default-settings/files/zzz-default-settings
-
-# 修改 argon 为默认主题,可根据你喜欢的修改成其他的（不选择那些会自动改变为默认主题的主题才有效果）
-sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci/Makefile
-
-# 设置密码为空（安装固件时无需密码登陆，然后自己修改想要的密码）
-sed -i 's@.*CYXluq4wUazHjmCDBCqXF*@#&@g' package/lean/default-settings/files/zzz-default-settings
-```
 # 使用
 
 ## 1.Fork
 
-右上角，Fork本项目到你的仓库
+~~右上角，Fork本项目到你的仓库~~ 好像现在fork的 Actions 都不能用了。
+
+所以用模板新建到自己的项目
+
+点击页面中的 Use this template （使用这个模版）按钮。
+
+填写仓库名称，然后点击Create repository from template（从模版创建储存库）按钮。
+[参见教程](https://p3terx.com/archives/build-openwrt-with-github-actions.html#toc_5)
 
 ## 2.Actions
 
