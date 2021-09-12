@@ -62,7 +62,13 @@ sed -i 's@.*CYXluq4wUazHjmCDBCqXF*@#&@g' package/lean/default-settings/files/zzz
 ![](https://gitee.com/Unkaer/blog/raw/master/images/material/20210307210937.webp)
 
 黑屏 按 `Ctrl`+`C`变为命令行模式 ;
-输入 `cd openwrt/ && make menuconfig` 进入菜单![](https://gitee.com/Unkaer/blog/raw/master/images/material/20210307211012.webp)
+输入 `cd openwrt/ && make menuconfig` 进入菜单
+
+```
+cd openwrt/ && make menuconfig
+```
+
+![](https://gitee.com/Unkaer/blog/raw/master/images/material/20210307211012.webp)
 ![](https://gitee.com/Unkaer/blog/raw/master/images/material/20210307211148.webp)
 
 ### 2.1设置插件
@@ -96,18 +102,7 @@ sed -i 's@.*CYXluq4wUazHjmCDBCqXF*@#&@g' package/lean/default-settings/files/zzz
 下次升级就可以直接用，不必再 ssh 选择插件了
 
 ```
-# 若在调整OpenWrt系统组件的过程有多次保存操作，则建议先删除.config.old文件再继续操作
-rm -f .config.old
-
-# 根据编译环境生成默认配置
-make defconfig
-
-# 对比默认配置的差异部分生成配置文件（可以理解为增量）
-./scripts/diffconfig.sh > seed.config
-
-# 输出seed.config
-cat seed.config
-
+rm -f .config.old && make defconfig && ./scripts/diffconfig.sh > seed.config && cat seed.config
 # 自己复制保存到合适的位置
 # 在手动修改成项目的 .config 文件
 ```
