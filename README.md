@@ -103,9 +103,10 @@ cd openwrt/ && make menuconfig
 
 ```
 rm -f .config.old && make defconfig && ./scripts/diffconfig.sh > seed.config && cat seed.config
-# 自己复制保存到合适的位置
-# 在手动修改成项目的 .config 文件
 ```
+
+*自己复制保存到合适的位置
+*在手动修改成项目的 .config 文件
 
 ### 2.3退出 ssh
 在命令行界面 `ctrl`+`D`  退出 ssh
